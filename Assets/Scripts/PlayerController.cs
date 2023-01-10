@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("PickUp"))
         {
             other.gameObject.SetActive(false);
+            GameManager.instance.AddScore(1);
         }
     }
 }

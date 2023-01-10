@@ -4,60 +4,41 @@ using UnityEngine;
 
 public class InstructionLight : MonoBehaviour
 {
-    [SerializeField] private Transform startPos;
-    [SerializeField] private Transform mid1Pos;
-    [SerializeField] private Transform mid2Pos;
-    [SerializeField] private Transform endPos;
+    public Light newLight;
+    float time = 0;
+    public float timeFlicker = 1;
 
+    [SerializeField] private Transform[] positions;
 
-    public Transform[] positions;
-    public int i = 0;
-    public float lerpAmount = 0;
-    public float lerpSpeed = 1.2f;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(LightSpark());
-        StartCoroutine(LightMove());
+        newLight = GetComponent<Light>();
+        
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //sparking light in first 3 seconds
+        if(time<3)
+        {
+            time += Time.deltaTime;
+            newLight.intensity = Mathf.Lerp(Random.Range(0, 4), Random.Range(0, 4), Mathf.PingPong(Time.time, timeFlicker));
+        }
+
+        //moving light to instruct the player
         
+        
+
     }
 
-    IEnumerator LightSpark()
+    void LightFlicker()
     {
-        yield return new WaitForSeconds(.05f);
-        GetComponent<Light>().intensity = 6;
-        yield return new WaitForSeconds(.05f);
-        GetComponent<Light>().intensity = 3;
-        yield return new WaitForSeconds(.05f);
-        GetComponent<Light>().intensity = 5;
-        yield return new WaitForSeconds(.05f);
-        GetComponent<Light>().intensity = 6;
-        yield return new WaitForSeconds(2f);
+
+
+        
     }
-    IEnumerator LightMove()
-    {
-        
-            if (lerpAmount >= 1f)
 
-                lerpAmount = 0;
-            lerpAmount += lerpSpeed * Time.deltaTime;
 
-            //Here the lerp from place to place takes place, this way it keeps looping between these positions.
-            transform.position = Vector3.Lerp(positions[i % positions.Length].position, positions[(i + 1) % positions.Length].position, lerpAmount);
 
-            //since lerp never actually reaches its target you need to check for the distance and can't just say if the lerps final position is reached up "i" by 1.
-            if (Vector3.Distance(transform.position, positions[(i + 1) % positions.Length].position) < 0.13333)
-            {
-                i++;
-                lerpAmount = 1;
-            }
-        
-        
-        yield return new WaitForSeconds(2f);
-    }
 }
