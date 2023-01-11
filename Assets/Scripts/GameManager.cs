@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
+    public GameObject player;
+    int score=0;
     [SerializeField]private GameObject[] pickUps;
 
-    int score;
     private void Awake()
     {
         if(instance!=null)
@@ -24,8 +25,22 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    
+    private void Update()
+    {
         pickUps = GameObject.FindGameObjectsWithTag("PickUp");
         Debug.Log("score:" + score +"pickups " + pickUps.Length);
+        
+
+        if (SceneManager.GetActiveScene().buildIndex > 0)
+        {
+            player = GameObject.Find("Player");
+            if (player.transform.position.y < -10)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                score = 0;
+            }
+
             if (pickUps.Length==0)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -33,6 +48,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
     public void AddScore(int value)
     {
         score += value;
