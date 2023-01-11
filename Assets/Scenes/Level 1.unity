@@ -833,7 +833,7 @@ GameObject:
   - component: {fileID: 613462117}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1059,10 +1059,10 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.08021868, g: 0.9528302, b: 0.03146139, a: 1}
-  m_Intensity: 12.81
-  m_Range: 3.77
-  m_SpotAngle: 65
+  m_Color: {r: 0.051063776, g: 1, b: 0, a: 1}
+  m_Intensity: 12
+  m_Range: 3.68
+  m_SpotAngle: 60
   m_InnerSpotAngle: 18
   m_CookieSize: 10
   m_Shadows:
@@ -1926,6 +1926,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1643993139}
   - component: {fileID: 1643993140}
+  - component: {fileID: 1643993141}
   m_Layer: 0
   m_Name: End Level
   m_TagString: Untagged
@@ -1962,6 +1963,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9999998, y: 22.091352, z: 0.99999875}
   m_Center: {x: 0, y: 10.545684, z: 0}
+--- !u!114 &1643993141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643993138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dfd39cbbd7a678428075235cfdb81d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1731968934 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7781951265952876455, guid: b606a809b7c428645b3e976149c75b61, type: 3}
