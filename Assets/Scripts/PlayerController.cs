@@ -5,25 +5,29 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody rb;
+    private Renderer playerRenderer;
     [SerializeField] private float speed = 2.0f;
     [SerializeField] private GameObject lightBulb;
-    private float offset= 1.6f;
+    private float offset = 1.5f;
+
+    
 
     float horizontalInput;
     float verticalInput;
+
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        
+        playerRenderer = gameObject.GetComponent<Renderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
         MovePlayer();
-        lightBulb.transform.position = new Vector3(transform.position.x, transform.position.y+offset, transform.position.z);
-        
+        lightBulb.transform.position = new Vector3(transform.position.x, transform.position.y + offset, transform.position.z);
     }
 
     void MovePlayer()
@@ -40,7 +44,21 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("PickUp"))
         {
             other.gameObject.SetActive(false);
-            GameManager.instance.AddScore(1);
+            //GameManager.instance.AddScore(1);
+            ColorChange(1.5f); //how to make dependent of pickups on the level
+
         }
+    }
+
+    private void ColorChange(float intensity)
+    {
+        Debug.Log("Color change");
+
+        var actualColor = playerRenderer.material.GetColor("_EmissionColor");
+        var newColor = actualColor * intensity;
+        playerRenderer.material.SetColor("_EmissionColor", newColor);
+        
+
+
     }
 }
