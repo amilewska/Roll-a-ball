@@ -7,7 +7,7 @@ public class BoardController : MonoBehaviour
 
     float verticalInput;
     float horizontalInput;
-    [SerializeField] float speed = 0.7f;
+    [SerializeField] float speed = 0.1f;
     
 
     // Update is called once per frame

@@ -18,7 +18,7 @@ public class EndPoint : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             
-            SceneManager.LoadScene(currentScene + 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
             if(currentScene > PlayerPrefs.GetInt("levelAt"))
             {
