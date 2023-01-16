@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
     public GameObject player;
-    int score=0;
-    [SerializeField]private GameObject[] pickUps;
+    public int score = 0;
+    [SerializeField]public GameObject[] pickUps;
+
+    public int levelNumber;
 
     private void Awake()
     {
@@ -19,18 +22,15 @@ public class GameManager : MonoBehaviour
         }
         instance = this;
         DontDestroyOnLoad(gameObject);
+        LoadLevelNumber();
     }
-    public void StartGame()
-    {
-        SceneManager.LoadScene(1);
-    }
-
     
+
     private void Update()
     {
         pickUps = GameObject.FindGameObjectsWithTag("PickUp");
-        Debug.Log("score:" + score +"pickups " + pickUps.Length);
-        
+
+
 
         if (SceneManager.GetActiveScene().buildIndex > 0)
         {
@@ -41,9 +41,9 @@ public class GameManager : MonoBehaviour
                 score = 0;
             }
 
-            if (pickUps.Length==0)
+            if (pickUps.Length==score)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                
                 score = 0;
             }
         }
@@ -53,6 +53,37 @@ public class GameManager : MonoBehaviour
     {
         score += value;
         Debug.Log("Score: " + score);
+        
+    }
+
+    [System.Serializable]
+    class SaveData
+    {
+        public int levelNumber;
+    }
+
+    public void SaveLevelNumber()
+    {
+        SaveData data = new SaveData();
+        data.levelNumber = levelNumber;
+
+        string json = JsonUtility.ToJson(data);
+
+        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+    }
+
+    public void LoadLevelNumber()
+    {
+        string path = Application.persistentDataPath + "savefile.json";
+
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            SaveData data = JsonUtility.FromJson<SaveData>(json);
+
+            levelNumber = data.levelNumber;
+        }
 
     }
+
 }
