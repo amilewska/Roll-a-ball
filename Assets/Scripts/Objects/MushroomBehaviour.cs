@@ -12,7 +12,7 @@ public class MushroomBehaviour : PowerUpBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
-        transform.localScale = new Vector3(transform.localScale.x, 0.2f, transform.localScale.z);
+        transform.localScale = new Vector3(transform.localScale.x, 0.4f, transform.localScale.z);
         
     }
 }

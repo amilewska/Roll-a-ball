@@ -9,8 +9,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]private float speed = 150f;
     [SerializeField] private GameObject lightBulb;
     private float offset = 1.5f;
+    [SerializeField] float intensity = 1.5f;
 
-    
+
+
     float horizontalInput;
     float verticalInput;
 
@@ -49,7 +51,7 @@ public class PlayerController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             //GameManager.instance.AddScore(1);
-            ColorChange(1.5f); //how to make dependent of pickups on the level
+            ColorChange(intensity); //how to make dependent of pickups on the level
 
         }
     }

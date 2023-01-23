@@ -14,8 +14,6 @@ public class WallFollowPlayer : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             target = new Vector3(other.transform.position.x, wall.transform.position.y, wall.transform.position.z);
-            //wall.transform.position = new Vector3(other.transform.position.x, wall.transform.position.y, wall.transform.position.z);
-            //wall.transform.Translate(new Vector3(other.transform.position.x, wall.transform.position.y, wall.transform.position.z) * Time.deltaTime * speed);
             wall.transform.position = Vector3.MoveTowards(wall.transform.position, target, Time.deltaTime * speed);
         }
         
