@@ -3,15 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
+
     public GameObject player;
+
     public int score = 0;
+    public int death = 0;
     [SerializeField]public GameObject[] pickUps;
 
     public int levelNumber;
+
+    [SerializeField] private Slider volumeSlider;
 
     private void Awake()
     {
@@ -23,6 +29,7 @@ public class GameManager : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject);
         LoadLevelNumber();
+        LoadVolume();
     }
     
 
@@ -56,6 +63,13 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void AddDeath(int value)
+    {
+        death += value;
+        Debug.Log("Death: " + death);
+
+    }
+
     [System.Serializable]
     class SaveData
     {
@@ -84,6 +98,17 @@ public class GameManager : MonoBehaviour
             levelNumber = data.levelNumber;
         }
 
+    }
+
+    public void SaveVolume()
+    {
+        PlayerPrefs.SetFloat("volumePref", volumeSlider.value);
+        LoadVolume();
+    }
+    public void LoadVolume()
+    {
+        volumeSlider.value = PlayerPrefs.GetFloat("volumePref", 0.5f);
+        AudioListener.volume = PlayerPrefs.GetFloat("volumePref", 0.5f);
     }
 
 }

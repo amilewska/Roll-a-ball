@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.038999394, g: 0.040050343, b: 0.053163923, a: 1}
+  m_IndirectSpecularColor: {r: 0.04239601, g: 0.04319139, b: 0.05789371, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3698478631579ac4bb2f98dee4da78bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 400
   lightBulb: {fileID: 1072186424}
 --- !u!54 &123553049
 Rigidbody:
@@ -532,6 +532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newLight: {fileID: 0}
   timeFlicker: 1
+  maxIntensity: 4
   positions: []
 --- !u!4 &468250621 stripped
 Transform:
@@ -1625,7 +1626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec5181aae41d0314399689f876edf179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
+  speed: 8
 --- !u!54 &1411701633
 Rigidbody:
   m_ObjectHideFlags: 0
