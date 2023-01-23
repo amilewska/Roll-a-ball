@@ -14,6 +14,10 @@ public class SpikesHarm : MonoBehaviour
             GameManager.instance.AddDeath(1);
 
         }
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            other.gameObject.SetActive(false);
+        }
     }
 
     IEnumerator LoadLevel()

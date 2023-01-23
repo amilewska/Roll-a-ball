@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -4132568766791213792}
   - component: {fileID: -3267380595859097912}
   m_Layer: 0
-  m_Name: long wall spikes
+  m_Name: LongWallSpikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
