@@ -3,29 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
-using UnityEngine.UI;
-using TMPro;
+
 
 public class GameManager : MonoBehaviour
 {
+
     public static GameManager instance { get; private set; }
 
     public GameObject player;
 
     public int score = 0;
     public int death = 0;
-    [SerializeField]public GameObject[] pickUps;
+    public GameObject[] pickUps;
 
     public int levelNumber;
 
-    [SerializeField] private Slider volumeSlider;
-
-    //settings
-    [SerializeField] Slider speedBallSlider;
-    [SerializeField] TextMeshProUGUI speedBallText;
-    [SerializeField] Slider speedBoardSlider;
-    [SerializeField] TextMeshProUGUI speedBoardText;
-    
     public float ballSpeed;
     public float boardSpeed;
 
@@ -39,7 +31,7 @@ public class GameManager : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject);
         LoadLevelNumber();
-        LoadVolume();
+        //LoadVolume();
     }
     
 
@@ -110,60 +102,6 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void SaveVolume()
-    {
-        PlayerPrefs.SetFloat("volumePref", volumeSlider.value);
-        LoadVolume();
-    }
-    public void LoadVolume()
-    {
-        volumeSlider.value = PlayerPrefs.GetFloat("volumePref", 0.2f);
-        AudioListener.volume = PlayerPrefs.GetFloat("volumePref", 0.2f);
-    }
-/*
-    public void SaveBoardSpeed()
-    {
-        PlayerPrefs.SetFloat("speedBoard", speedBoardSlider.value);
-        LoadBoardSpeed();
-    }
-
-    public void LoadBoardSpeed()
-    {
-        speedBoardSlider.value = PlayerPrefs.GetFloat("speedBoard", 0.2f);
-        boardSpeed = PlayerPrefs.GetFloat("speedBoard", 0.2f);
-        boardSpeed *= 8 * 12.5f;
-    }
-
-    public void ShowValueSpeed()
-    {
-        speedBoardText.text = boardSpeed.ToString("0");
-        
-    }
-
-
-    public void SaveBallSpeed()
-    {
-        PlayerPrefs.SetFloat("speedBall", speedBallSlider.value);
-        LoadBallSpeed();
-    }
-
-    public void LoadBallSpeed()
-    {
-        speedBallSlider.value = PlayerPrefs.GetFloat("speedBall", 0.4f);
-        ballSpeed = PlayerPrefs.GetFloat("speedBall", 0.4f);
-        ballSpeed *= 1000;
-    }
-
-    public void ShowValueBallSpeed()
-    {
-        speedBallText.text = ballSpeed.ToString("0");
-
-    }
-
-    public void DefaultValue()
-    {
-        ballSpeed = 150;
-        boardSpeed = 8;
-    }*/
+    
 
 }
