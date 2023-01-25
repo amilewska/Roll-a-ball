@@ -9,17 +9,10 @@ public class BoardController : MonoBehaviour
     float horizontalInput;
     public float speed = 20;
 
-    private void Start()
-    {
-        
-        
-    }
-    // Update is called once per frame
     void FixedUpdate()
     {
-        
-        speed = GameManager.instance.boardSpeed;
-        GameManager.instance.LoadBoardSpeed();
+        /*speed = GameManager.instance.boardSpeed;
+        GameManager.instance.LoadBoardSpeed();*/
 
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");

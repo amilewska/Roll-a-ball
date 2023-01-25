@@ -26,8 +26,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] Slider speedBoardSlider;
     [SerializeField] TextMeshProUGUI speedBoardText;
     
-    public float ballSpeed = 400;
-    public float boardSpeed = 20;
+    public float ballSpeed;
+    public float boardSpeed;
 
     private void Awake()
     {
@@ -117,10 +117,10 @@ public class GameManager : MonoBehaviour
     }
     public void LoadVolume()
     {
-        volumeSlider.value = PlayerPrefs.GetFloat("volumePref", 0.5f);
-        AudioListener.volume = PlayerPrefs.GetFloat("volumePref", 0.5f);
+        volumeSlider.value = PlayerPrefs.GetFloat("volumePref", 0.2f);
+        AudioListener.volume = PlayerPrefs.GetFloat("volumePref", 0.2f);
     }
-
+/*
     public void SaveBoardSpeed()
     {
         PlayerPrefs.SetFloat("speedBoard", speedBoardSlider.value);
@@ -129,8 +129,9 @@ public class GameManager : MonoBehaviour
 
     public void LoadBoardSpeed()
     {
-        speedBoardSlider.value = PlayerPrefs.GetFloat("speedBoard", 0.5f);
-        boardSpeed = PlayerPrefs.GetFloat("speedBoard", 0.5f)*8*12.5f;
+        speedBoardSlider.value = PlayerPrefs.GetFloat("speedBoard", 0.2f);
+        boardSpeed = PlayerPrefs.GetFloat("speedBoard", 0.2f);
+        boardSpeed *= 8 * 12.5f;
     }
 
     public void ShowValueSpeed()
@@ -138,5 +139,31 @@ public class GameManager : MonoBehaviour
         speedBoardText.text = boardSpeed.ToString("0");
         
     }
+
+
+    public void SaveBallSpeed()
+    {
+        PlayerPrefs.SetFloat("speedBall", speedBallSlider.value);
+        LoadBallSpeed();
+    }
+
+    public void LoadBallSpeed()
+    {
+        speedBallSlider.value = PlayerPrefs.GetFloat("speedBall", 0.4f);
+        ballSpeed = PlayerPrefs.GetFloat("speedBall", 0.4f);
+        ballSpeed *= 1000;
+    }
+
+    public void ShowValueBallSpeed()
+    {
+        speedBallText.text = ballSpeed.ToString("0");
+
+    }
+
+    public void DefaultValue()
+    {
+        ballSpeed = 150;
+        boardSpeed = 8;
+    }*/
 
 }
