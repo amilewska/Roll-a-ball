@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +19,15 @@ public class GameManager : MonoBehaviour
     public int levelNumber;
 
     [SerializeField] private Slider volumeSlider;
+
+    //settings
+    [SerializeField] Slider speedBallSlider;
+    [SerializeField] TextMeshProUGUI speedBallText;
+    [SerializeField] Slider speedBoardSlider;
+    [SerializeField] TextMeshProUGUI speedBoardText;
+    
+    public float ballSpeed = 400;
+    public float boardSpeed = 20;
 
     private void Awake()
     {
@@ -109,6 +119,24 @@ public class GameManager : MonoBehaviour
     {
         volumeSlider.value = PlayerPrefs.GetFloat("volumePref", 0.5f);
         AudioListener.volume = PlayerPrefs.GetFloat("volumePref", 0.5f);
+    }
+
+    public void SaveBoardSpeed()
+    {
+        PlayerPrefs.SetFloat("speedBoard", speedBoardSlider.value);
+        LoadBoardSpeed();
+    }
+
+    public void LoadBoardSpeed()
+    {
+        speedBoardSlider.value = PlayerPrefs.GetFloat("speedBoard", 0.5f);
+        boardSpeed = PlayerPrefs.GetFloat("speedBoard", 0.5f)*8*12.5f;
+    }
+
+    public void ShowValueSpeed()
+    {
+        speedBoardText.text = boardSpeed.ToString("0");
+        
     }
 
 }

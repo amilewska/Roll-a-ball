@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = gameObject.GetComponent<Rigidbody>();
         playerRenderer = gameObject.GetComponent<Renderer>();
     }
 
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
     void MoveLamp()
     {
-        lightBulb.transform.position = new Vector3(transform.position.x, transform.position.y + offset, transform.position.z);
+        if(lightBulb!=null) lightBulb.transform.position = new Vector3(transform.position.x, transform.position.y + offset, transform.position.z);
     }
     void MovePlayer()
     {
