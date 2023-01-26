@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class BoardController : MonoBehaviour
 {
-
+    [Header("Movement values")]
     float verticalInput;
     float horizontalInput;
-    public float speed = 20;
+    [SerializeField] float speed;
+
+    
 
     void FixedUpdate()
     {
-        /*speed = GameManager.instance.boardSpeed;
-        GameManager.instance.LoadBoardSpeed();*/
-
+        if(GameManager.instance!= null) speed = GameManager.instance.boardSpeed;
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
 

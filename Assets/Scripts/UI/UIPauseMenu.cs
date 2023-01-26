@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIPauseMenu : UIHandler
+public class UIPauseMenu : MonoBehaviour
 {
     public GameObject pauseScreen;
-    public bool isPaused;
+    public bool isPaused=true;
 
     private void Update()
     {

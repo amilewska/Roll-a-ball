@@ -24,11 +24,7 @@ public class EndPoint : MonoBehaviour
             }
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
-            if(currentScene > PlayerPrefs.GetInt("levelAt"))
-            {
-                PlayerPrefs.SetInt("levelAt", currentScene);
-            }
-
+            
             if (currentScene > GameManager.instance.levelNumber)
             {
                 GameManager.instance.levelNumber = currentScene;

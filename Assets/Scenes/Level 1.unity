@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.043200053, g: 0.04403927, b: 0.059056178, a: 1}
+  m_IndirectSpecularColor: {r: 0.0355154, g: 0.03660457, b: 0.04910034, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1086,7 +1086,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1549066269}
+      - m_Target: {fileID: 1549066270}
         m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
         m_MethodName: BackToMenu
         m_Mode: 1
@@ -1263,9 +1263,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3698478631579ac4bb2f98dee4da78bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 200
   lightBulb: {fileID: 106419009}
+  offset: 1.5
   intensity: 1.5
+  speed: 200
 --- !u!4 &616186881 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7781951265952876455, guid: b606a809b7c428645b3e976149c75b61, type: 3}
@@ -3054,7 +3055,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1549066263}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53bc0ad6862257f4c876be6d9ee46346, type: 3}
+  m_Script: {fileID: 11500000, guid: bb59f3498cf89eb4f82643321f8263de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1550318757

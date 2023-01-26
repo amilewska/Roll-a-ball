@@ -7,11 +7,11 @@ using System.IO;
 
 public class GameManager : MonoBehaviour
 {
-
     public static GameManager instance { get; private set; }
 
+    [Header("References")]
     public GameObject player;
-
+    
     public int score = 0;
     public int death = 0;
     public GameObject[] pickUps;
@@ -31,15 +31,17 @@ public class GameManager : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject);
         LoadLevelNumber();
-        //LoadVolume();
     }
-    
+
 
     private void Update()
     {
         pickUps = GameObject.FindGameObjectsWithTag("PickUp");
 
-
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            player = GameObject.Find("Sphere");
+        }
 
         if (SceneManager.GetActiveScene().buildIndex > 0)
         {
@@ -101,7 +103,5 @@ public class GameManager : MonoBehaviour
         }
 
     }
-
-    
 
 }

@@ -4,34 +4,30 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody rb;
-    private Renderer playerRenderer;
-    [SerializeField] private float speed = 150f;
-    [SerializeField] private GameObject lightBulb;
-    private float offset = 1.5f;
+    [Header("References")]
+    Rigidbody rb;
+    Renderer playerRenderer;
+    [SerializeField] GameObject lightBulb;
+
+    [Header("Preferences")]
+    [SerializeField] float offset = 1.5f;
     [SerializeField] float intensity = 1.5f;
 
-
-
+    [Header("Movement values")]
+    [SerializeField] float speed;
     float horizontalInput;
     float verticalInput;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
         playerRenderer = gameObject.GetComponent<Renderer>();
-
+        
     }
 
-
-    // Update is called once per frame
     void FixedUpdate()
     {
-        /*speed = GameManager.instance.ballSpeed;
-        GameManager.instance.LoadBallSpeed();*/
-
+        if (GameManager.instance != null) speed = GameManager.instance.ballSpeed;
         MovePlayer();
         MoveLamp();
     }
@@ -63,8 +59,8 @@ public class PlayerController : MonoBehaviour
 
     private void ColorChange(float intensity)
     {
-        var actualColor = playerRenderer.material.GetColor("_EmissionColor");
-        var newColor = actualColor * intensity;
+        Color actualColor = playerRenderer.material.GetColor("_EmissionColor");
+        Color newColor = actualColor * intensity;
         playerRenderer.material.SetColor("_EmissionColor", newColor);
         
     }
