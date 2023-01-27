@@ -14,13 +14,18 @@ public class UIMainMenu : MonoBehaviour
     [SerializeField] Slider speedBoardSlider;
     [SerializeField] TextMeshProUGUI speedBoardText;
 
+
+    private void Start()
+    {
+        LoadBallSpeed();
+        LoadBoardSpeed();
+    }
     private void Awake()
     {
         LoadVolume();
+        
 
-        LoadBallSpeed();
-        LoadBoardSpeed();
-        DontDestroyOnLoad(gameObject);
+
 
     }
 

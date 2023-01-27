@@ -22,12 +22,12 @@ public class PlayerController : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody>();
         playerRenderer = gameObject.GetComponent<Renderer>();
-        
+        speed = GameManager.instance.ballSpeed;
     }
 
     void FixedUpdate()
     {
-        if (GameManager.instance != null) speed = GameManager.instance.ballSpeed;
+        
         MovePlayer();
         MoveLamp();
     }
@@ -41,9 +41,9 @@ public class PlayerController : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
 
-        rb.AddForce(verticalInput * speed * Time.fixedDeltaTime* Vector3.forward);
+        rb.AddForce(verticalInput * speed * Time.fixedDeltaTime * Vector3.forward);
 
-        rb.AddForce(horizontalInput * speed * Time.deltaTime * Vector3.right);
+        rb.AddForce(horizontalInput * speed * Time.fixedDeltaTime * Vector3.right);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             //GameManager.instance.AddScore(1);
-            ColorChange(intensity); //how to make dependent of pickups on the level
+            ColorChange(intensity); //how to make dependent of pickups on the level?
 
         }
     }
