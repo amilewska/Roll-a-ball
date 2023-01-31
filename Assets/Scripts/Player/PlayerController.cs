@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    /*
+        class PlayerController is create to:
+        - moves the ball
+        - get the speed from the main menu (via GameManager)
+        - add score to Game Manager when pick up is collected
+        - change intensity of ball's color when collides with pick up
+        - move the light
+    */
+
     [Header("References")]
     Rigidbody rb;
     Renderer playerRenderer;

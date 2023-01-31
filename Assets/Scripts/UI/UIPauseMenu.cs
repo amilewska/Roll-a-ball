@@ -5,8 +5,15 @@ using TMPro;
 
 public class UIPauseMenu : MonoBehaviour
 {
+    /*
+        class UIPauseMenu is create to:
+        - pause game on the Escape key
+        - unpause game on the Escape key when pause panel is active
+        - show total deaths and amount of pickups collected
+        - show total glows/pickups on actual level
+    */
     public GameObject pauseScreen;
-    public bool isPaused=true;
+    public bool isPaused = true;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI deathText;
     public GameObject[] glowsOnThisLevel;

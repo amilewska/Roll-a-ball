@@ -8,6 +8,15 @@ using UnityEditor;
 
 public class UIHandler : MonoBehaviour
 {
+    /*
+        class UIHandler is create to buttons to:
+        - start game
+        - go back to main menu scene
+        - go to the next level  
+        - quit the game
+    */
+
+
     //METHODS FOR LOADING LEVELS
     public void StartGame()
     {
@@ -28,6 +37,7 @@ public class UIHandler : MonoBehaviour
     {
 #if UNITY_EDITOR
         EditorApplication.ExitPlaymode();
+
 #else
 Application.Quit();
 #endif

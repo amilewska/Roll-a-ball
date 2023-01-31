@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class HatBehavioour : MonoBehaviour
 {
-    [SerializeField] GameObject player;
-    // Start is called before the first frame update
-    
+    /*
+        class HatBehavioour is create to:
+        - moves the hat when player is moving too
+    */
 
-    // Update is called once per frame
+    [SerializeField] GameObject player;
+    float offset = 0.17f;
+   
     void Update()
     {
-        transform.position = new Vector3(player.transform.position.x, player.transform.position.y+0.17f, player.transform.position.z);
-        //transform.rotation = Quaternion.Euler(player.transform.rotation.y, player.transform.rotation.y, player.transform.rotation.y);
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y + offset, player.transform.position.z);
+        
     }
 }

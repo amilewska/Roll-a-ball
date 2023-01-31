@@ -5,6 +5,13 @@ using TMPro;
 
 public class UIMainMenu : MonoBehaviour
 {
+    /*
+        class UIMainMenu is create to:
+        - save the volume of background sound
+        - save the values of speed
+        - set the default values of speed
+    */
+
     [Header("Volume Setting")]
     [SerializeField] Slider volumeSlider;
 
@@ -17,20 +24,10 @@ public class UIMainMenu : MonoBehaviour
 
     private void Start()
     {
-        
-    }
-    private void Awake()
-    {
-        LoadVolume();
-       
-    }
-
-    private void Update()
-    {
         LoadBallSpeed();
         LoadBoardSpeed();
+        LoadVolume();
     }
-
 
     //VOLUME SETTINGS
 
@@ -71,8 +68,8 @@ public class UIMainMenu : MonoBehaviour
 
     public void LoadBallSpeed()
     {
-        speedBallSlider.value = PlayerPrefs.GetFloat("speedBall", 0.4f);
-        GameManager.instance.ballSpeed = PlayerPrefs.GetFloat("speedBall", 0.4f);
+        speedBallSlider.value = PlayerPrefs.GetFloat("speedBall", 0.2f);
+        GameManager.instance.ballSpeed = PlayerPrefs.GetFloat("speedBall", 0.2f);
         speedBallText.text = GameManager.instance.ballSpeed.ToString("0");
     }
 
