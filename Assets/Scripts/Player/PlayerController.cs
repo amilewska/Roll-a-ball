@@ -22,12 +22,12 @@ public class PlayerController : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody>();
         playerRenderer = gameObject.GetComponent<Renderer>();
-        speed = GameManager.instance.ballSpeed;
+        
     }
 
     void FixedUpdate()
     {
-        
+        if (GameManager.instance != null) speed = GameManager.instance.ballSpeed;
         MovePlayer();
         MoveLamp();
     }
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("PickUp"))
         {
             other.gameObject.SetActive(false);
-            //GameManager.instance.AddScore(1);
+            GameManager.instance.AddScore(1);
             ColorChange(intensity); //how to make dependent of pickups on the level?
 
         }

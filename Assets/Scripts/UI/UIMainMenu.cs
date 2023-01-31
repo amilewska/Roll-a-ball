@@ -17,19 +17,19 @@ public class UIMainMenu : MonoBehaviour
 
     private void Start()
     {
-        LoadBallSpeed();
-        LoadBoardSpeed();
+        
     }
     private void Awake()
     {
         LoadVolume();
-        
-
-
-
+       
     }
 
-    
+    private void Update()
+    {
+        LoadBallSpeed();
+        LoadBoardSpeed();
+    }
 
 
     //VOLUME SETTINGS

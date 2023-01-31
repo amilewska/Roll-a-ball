@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class CameraMoving : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     public GameObject player;
-    Vector3 offset = new Vector3(0,7,-7);
-    // Update is called once per frame
+    Vector3 endPos = new Vector3(0, 7,-7);
+
     void FixedUpdate()
     {
-        //transform.LookAt(player.transform.position);
-        transform.position = Vector3.Lerp(transform.position, offset, 0.001f);
+        transform.position = Vector3.Lerp(transform.position, endPos, 0.001f);
     }
 }

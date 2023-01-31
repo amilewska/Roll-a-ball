@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     
     public int score = 0;
+    public int allScore = 0;
     public int death = 0;
     public GameObject[] pickUps;
 
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject);
         LoadLevelNumber();
+        
     }
 
 
@@ -48,30 +50,28 @@ public class GameManager : MonoBehaviour
             player = GameObject.Find("Player");
             if (player.transform.position.y < -10)
             {
+                AddDeath(1);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 score = 0;
             }
 
-            if (pickUps.Length==score)
-            {
-                
-                score = 0;
-            }
+            
         }
     }
 
     public void AddScore(int value)
     {
         score += value;
-        Debug.Log("Score: " + score);
-        
+    }
+
+    public void AddAllScores(int value)
+    {
+        allScore += value;
     }
 
     public void AddDeath(int value)
     {
         death += value;
-        Debug.Log("Death: " + death);
-
     }
 
     [System.Serializable]

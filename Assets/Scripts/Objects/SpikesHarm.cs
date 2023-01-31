@@ -12,6 +12,7 @@ public class SpikesHarm : MonoBehaviour
         {
             StartCoroutine(LoadLevel());
             GameManager.instance.AddDeath(1);
+            GameManager.instance.score = 0;
 
         }
         if (other.gameObject.CompareTag("Enemy"))

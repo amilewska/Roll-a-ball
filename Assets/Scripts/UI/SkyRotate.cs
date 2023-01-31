@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SkyRotate : MonoBehaviour
 {
-    public float rotateSpeed = 1f;
+    float rotateSpeed = 1f;
+
 
     // Update is called once per frame
     void Update()

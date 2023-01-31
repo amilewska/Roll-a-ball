@@ -9,7 +9,8 @@ public class Teleport : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        other.transform.position = secondPortal.position;
-        other.attachedRigidbody.AddRelativeForce(Vector3.right*Time.deltaTime);
+        other.transform.position = secondPortal.position + Vector3.up;
+        other.attachedRigidbody.AddRelativeForce(-Vector3.right * Time.deltaTime, ForceMode.Impulse);
+        other.attachedRigidbody.velocity = new Vector3(other.attachedRigidbody.velocity.x, -other.attachedRigidbody.velocity.y, other.attachedRigidbody.velocity.z);
     }
 }

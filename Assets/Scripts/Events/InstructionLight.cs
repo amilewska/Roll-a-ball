@@ -21,23 +21,22 @@ public class InstructionLight : MonoBehaviour
     void Update()
     {
         //sparking light in first 3 seconds
-        if(time<3)
-        {
-            time += Time.deltaTime;
-            newLight.intensity = Mathf.Lerp(Random.Range(0, maxIntensity), Random.Range(0, maxIntensity), Mathf.PingPong(Time.time, timeFlicker));
-        }
+        LightFlicker();
 
         //moving light to instruct the player
-        
-        
+
+
 
     }
 
     void LightFlicker()
     {
+        if (time < 4)
+        {
+            time += Time.deltaTime;
+            newLight.intensity = Mathf.Lerp(Random.Range(0, maxIntensity), Random.Range(0, maxIntensity), Mathf.PingPong(Time.time, timeFlicker));
+        }
 
-
-        
     }
 
 

@@ -7,7 +7,7 @@ public class MushroomBehaviour : PowerUpBehaviour
 {
     public override void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.transform.localScale.x < 0.4f)
+        if(other.gameObject.transform.localScale.x < 0.7f)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

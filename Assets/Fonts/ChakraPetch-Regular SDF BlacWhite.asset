@@ -145,7 +145,7 @@ Material:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
     - _EnvMatrixRotation: {r: 0, g: 0, b: 0, a: 0}
     - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
-    - _GlowColor: {r: 1, g: 0, b: 0.85984373, a: 0.26666668}
+    - _GlowColor: {r: 0.5566038, g: 0.54872733, b: 0.5554918, a: 0.26666668}
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
@@ -163,11 +163,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: ChakraPetch-Regular SDF
+  m_Name: ChakraPetch-Regular SDF BlacWhite
   m_EditorClassIdentifier: 
-  hashCode: 1311256510
+  hashCode: -1029017822
   material: {fileID: -954690681049029711}
-  materialHashCode: 531953118
+  materialHashCode: 1822099394
   m_Version: 1.1.0
   m_SourceFontFileGUID: 175327a9df9895c418290ae747275475
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 175327a9df9895c418290ae747275475, type: 3}
