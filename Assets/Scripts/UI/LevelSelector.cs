@@ -4,7 +4,11 @@ using UnityEngine.UI;
 
 public class LevelSelector : MonoBehaviour
 {
-    
+    /*
+        class LevelSelector is create to:
+        - block and unblock levels in the Level menu
+    */
+
     public GameObject lockPanel;
     public bool unlocked;
     public int levelIndex;

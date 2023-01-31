@@ -5,6 +5,13 @@ using TMPro;
 
 public class SongChooser : MonoBehaviour
 {
+    /*
+        class SongChooser is create to:
+        - save clips
+        - play the clips
+        - change the label on dropdown
+    */
+
     [Header("Audiosource")]
     public AudioSource audiosource;
 
@@ -40,21 +47,25 @@ public class SongChooser : MonoBehaviour
         if (val == 2)
         {
             audiosource.clip = cosmicTrance;
+            labelText.text = "Cosmic Trance";
         }
 
         if (val == 3)
         {
             audiosource.clip = utopiaCosmicTrance;
+            labelText.text = "Utopia Cosmic";
         }
 
         if (val == 4)
         {
             audiosource.clip = space;
+            labelText.text = "Space";
         }
 
         if (val == 5)
         {
             audiosource.clip = lifeLike;
+            labelText.text = "Lifelike";
         }
 
         audiosource.Play();
