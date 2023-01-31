@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
             {
                 
                 player.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                player.transform.position = new Vector3(5, 8, -0.6f);
+                player.transform.position = new Vector3(0, 10, 0);
                 
             }
                 
