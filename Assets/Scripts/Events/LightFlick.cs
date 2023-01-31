@@ -1,15 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class InstructionLight : MonoBehaviour
+public class LightFlick : MonoBehaviour
 {
-    public Light newLight;
+    /*
+        class LightFlick is create to:
+        - show Starting Red Light
+    */
+
+    Light newLight;
     float time = 0;
     public float timeFlicker = 1;
-    [SerializeField] float maxIntensity = 4;
+    [SerializeField] float maxIntensity = 6;
 
-    [SerializeField] private Transform[] positions;
 
     // Start is called before the first frame update
     void Start()
@@ -20,12 +22,8 @@ public class InstructionLight : MonoBehaviour
 
     void Update()
     {
-        //sparking light in first 3 seconds
+        //sparking light in first 4 seconds
         LightFlicker();
-
-        //moving light to instruct the player
-
-
 
     }
 
@@ -38,7 +36,5 @@ public class InstructionLight : MonoBehaviour
         }
 
     }
-
-
 
 }

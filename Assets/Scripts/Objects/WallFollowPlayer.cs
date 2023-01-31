@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class WallFollowPlayer : MonoBehaviour
 {
+    /*
+        class WallFollowPlayer is create to:
+        - make the wall follow player only when s/he reaches its boundaries
+        - boundaries are make through the collider
+    */
+    [Header("References")]
     [SerializeField] GameObject wall;
-    [SerializeField] float speed;
     Vector3 target;
+    [Header("Variables")]
+    [SerializeField] float speed;
 
 
     private void OnTriggerStay(Collider other)

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CameraMoving : MonoBehaviour
 {
+    /*
+        class CameraMoving is create to:
+        - move the camera to more smooth effect
+    */
     public GameObject player;
     Vector3 endPos = new Vector3(0, 7,-7);
 

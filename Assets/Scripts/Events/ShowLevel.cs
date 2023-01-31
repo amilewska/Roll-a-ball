@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class ShowLevel : MonoBehaviour
 {
+    /*
+        class ShowLevel is only create to the Level 14:
+        - to show second level by scaling floors
+        - beacase it has interesting visual effect
+    */
+
     [SerializeField] GameObject firstFloor;
     [SerializeField] GameObject secondFloor;
     [SerializeField] GameObject lightstart;
@@ -16,7 +22,6 @@ public class ShowLevel : MonoBehaviour
             StartCoroutine(ScaleOverTime(firstFloor.transform, Vector3.zero, 1));
         }
     }
-
 
     private void OnTriggerEnter(Collider other)
     {

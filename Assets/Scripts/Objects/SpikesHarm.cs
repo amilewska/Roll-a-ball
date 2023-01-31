@@ -5,7 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class SpikesHarm : MonoBehaviour
 {
-    
+    /*
+        class SpikesHarm is create to (when player collides with it):
+        - load the same level 
+        - add death to the Game Manager
+        - reset score
+        - unactive other object with tag Enemy
+    */
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))

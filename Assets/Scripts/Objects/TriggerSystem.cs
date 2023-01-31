@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class TriggerSystem : MonoBehaviour
 {
+    /*
+        class TriggerSystem is create to:
+        - make the stalkers (white spheres) follow player
+        - make the stalkers appears when player exit the labirynth
+    */
+
     public float speed;
     public GameObject[] stalkers;
     public GameObject triggerExitLabirynth;

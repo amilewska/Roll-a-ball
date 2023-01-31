@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class Teleport : MonoBehaviour
 {
-    [SerializeField]Transform secondPortal;
+    /*
+        class Teleport is create to:
+        - moves instantly the object which is within his collider from this position to position of second Portal
+    */
+
+    [SerializeField] Transform secondPortal;
     
 
     private void OnTriggerEnter(Collider other)

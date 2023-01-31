@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class TriggerExit : MonoBehaviour
 {
+    /*
+        class TriggerExit is create to:
+        - moves the exit when player is near to it
+    */
+
     [SerializeField]GameObject exit;
     [SerializeField]Transform endPos;
     bool isExit = false;
@@ -17,7 +22,6 @@ public class TriggerExit : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-
             isExit = true;
         }
     }

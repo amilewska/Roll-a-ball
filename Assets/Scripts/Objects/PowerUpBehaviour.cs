@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class PowerUpBehaviour : MonoBehaviour
 {
-    
+    /*
+        class PowerUpBehaviour is create to:
+        - moves the object in circle
+        - make the player bigger when s/he touches it
+    */
+
     [SerializeField] float speed = 0.5f;
     [SerializeField] float rotation = 90;
     private void Update()
@@ -16,7 +21,11 @@ public class PowerUpBehaviour : MonoBehaviour
 
     public virtual void OnTriggerEnter(Collider other)
     {
-        other.transform.localScale *= 2;
-        Destroy(gameObject);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.transform.localScale *= 2;
+            Destroy(gameObject);
+        }
+        
     }
 }

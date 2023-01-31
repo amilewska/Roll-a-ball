@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class HeigherSpikes : MonoBehaviour
 {
+    /*
+        class HeigherSpikes is create to:
+        - moves height of spikes
+    */
+
     [SerializeField] Transform startScale;
     [SerializeField] Transform endScale;
     [SerializeField] private float speed = 0.5f;

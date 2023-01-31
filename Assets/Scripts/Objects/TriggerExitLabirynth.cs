@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class TriggerExitLabirynth : FirstTrigger
 {
-    
+    /*
+        class TriggerExitLabirynth is create to:
+        - hidden labirynth when player leaves it
+    */
+
     private void OnTriggerExit(Collider other)
     {
         if(gameObject.tag == "Player")

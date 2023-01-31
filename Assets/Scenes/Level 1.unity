@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.04290061, g: 0.043719716, b: 0.05861869, a: 1}
+  m_IndirectSpecularColor: {r: 0.016969323, g: 0.018246572, b: 0.024558276, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -147,13 +147,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106419009}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4986941, y: 1.6, z: 0.102164626}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.46, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 613462116}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &106419011
 Light:
@@ -731,10 +731,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be06f12f97557e54f96ff405d6bcd63c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newLight: {fileID: 0}
   timeFlicker: 1
   maxIntensity: 4
-  positions: []
 --- !u!1001 &320909564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1186,9 +1184,10 @@ Transform:
   m_LocalPosition: {x: -1.4986941, y: 0.37, z: 0.102164626}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 106419010}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &613462117
 MonoBehaviour:
@@ -1948,7 +1947,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1197757507
 GameObject:
@@ -2773,7 +2772,7 @@ Transform:
   - {fileID: 1643993139}
   - {fileID: 828273007}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1411701632
 MonoBehaviour:
@@ -2998,7 +2997,7 @@ RectTransform:
   - {fileID: 1240621687}
   - {fileID: 838242116}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

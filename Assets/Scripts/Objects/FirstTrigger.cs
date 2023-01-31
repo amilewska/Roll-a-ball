@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class FirstTrigger : TriggerSystem
 {
+    /*
+        class FirstTrigger is create to:
+        - make the stalkers (white spheres) follow player when it leaves pick up trap
+        - show the hidden labirynth when player exit the pick up trap
+    */
 
     private void OnTriggerStay(Collider other)
     {
